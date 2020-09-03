@@ -16,16 +16,20 @@ def simulation(iat_rt, iat_non_rt, st_rt, st_non_rt, master_clock):
     while mc <= master_clock:
         if rt_clock < scl:
             mc = rt_clock
-            non_rt_queue.append(scl - rt_clock)
-            rt_clock += iat_rt
-            n_non_rt += 1
-            server_status = 1
-            scl = mc + st_rt
+            n_rt += 1
+            if scl-rt_clock != 0:
+                non_rt_queue.append(scl - rt_clock)
+                n_non_rt += 1
+            if n_rt == 1:
+                rt_clock += iat_rt
+                server_status = 1
+                scl = mc + st_rt
+                n_rt -= 1
         elif non_rt_clock < scl:
             mc = non_rt_clock
             non_rt_queue.append(st_non_rt)
-            non_rt_clock += iat_non_rt
             n_non_rt += 1
+            non_rt_clock += iat_non_rt
             server_status = 2
             scl = mc + st_non_rt
         else:
@@ -39,6 +43,9 @@ def simulation(iat_rt, iat_non_rt, st_rt, st_non_rt, master_clock):
                 scl = mc + non_rt_queue[0]
                 non_rt_queue.pop(0)
         print(f"{mc}\t{rt_clock}\t{non_rt_clock}\t{n_rt}\t{n_non_rt}\t{scl}\t{server_status}")
+        # To check if the server would get idle
+        if scl > rt_clock and scl > non_rt_clock:
+            server_status = 0
         mc = scl
 
 # Main function
