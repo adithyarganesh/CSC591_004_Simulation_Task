@@ -106,7 +106,11 @@ def simulation_with_randomness(iat_rt, iat_non_rt, st_rt, st_non_rt, master_cloc
 
 # Main function
 if __name__ == '__main__':
-    print("Task 1.1\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
+    print("Task 2.1\nSubtask 1.1\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
     simulation(iat_rt=10, iat_non_rt=5, st_rt=2, st_non_rt=4, master_clock=50)
-    print("\nTask 1.2\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
+    print("\nTask 2.1\nSubtask 1.2\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
     simulation(iat_rt=5, iat_non_rt=10, st_rt=4, st_non_rt=2, master_clock=20)
+    print("Task 2.2\nSubtask 1.1\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
+    simulation_with_randomness(iat_rt=10, iat_non_rt=5, st_rt=2, st_non_rt=4, master_clock=200)
+    print("\nTask 2.2\nSubtask 1.2\nmc\trt_clock\tnon_rt_clock\tn_rt\tn_non_rt\tscl\tserver_status")
+    simulation_with_randomness(iat_rt=5, iat_non_rt=10, st_rt=4, st_non_rt=2, master_clock=200)
