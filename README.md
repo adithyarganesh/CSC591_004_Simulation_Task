@@ -1,4 +1,4 @@
-# CSC591_IOT_Analytics_Simulation_Task_2
+# CSC591_IOT_Analytics_Simulation_Task_3
 
 # Important Information
 Code has not been run in eos and the main libraries used are numpy and matplotlib
@@ -32,4 +32,3 @@ All the results have been analysed and the analysis metrics have been saved as i
 
 # Issues
 pip/ pip3 based on Python usage 
-Since both the tasks use the same script, two separate files have not been created and instead two output files are generated separately for each task when the script is run.
